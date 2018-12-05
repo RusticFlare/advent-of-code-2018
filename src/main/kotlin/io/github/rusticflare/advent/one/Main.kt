@@ -1,5 +1,7 @@
 package io.github.rusticflare.advent.one
 
 fun main(args: Array<String>) {
-    AdventOne().first()
+    val adventOne = AdventOne()
+    adventOne.first()
+    adventOne.second()
 }

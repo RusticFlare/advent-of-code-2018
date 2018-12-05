@@ -1,17 +1,19 @@
 package io.github.rusticflare.advent.one
 
-import java.util.stream.Stream
-
-class FrequencyMonitor(private val changes: Stream<String>) {
+class FrequencyMonitor(private val frequencyChanges: FrequencyChanges) {
 
     fun getFinalFrequency(): Int {
-        return changes
-            .mapToInt(String::toInt)
+        return frequencyChanges.streamDeltas()
             .sum()
     }
 
     fun getFirstRepeatedFrequency(): Int {
-        return 0
+        val frequencyTracker = FrequencyTracker()
+        return frequencyChanges.streamCycledDeltas()
+            .filter { frequencyTracker.isRepeat(it) }
+            .map { frequencyTracker.getCurrentFrequency() }
+            .findFirst()
+            .orElseThrow();
     }
 
 }
