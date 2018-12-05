@@ -2,7 +2,7 @@ package io.github.rusticflare.advent.one
 
 import java.util.stream.Stream
 
-class FrequencyTracker(private val changes: Stream<String>) {
+class FrequencyMonitor(private val changes: Stream<String>) {
 
     fun getFinalFrequency(): Int {
         return changes

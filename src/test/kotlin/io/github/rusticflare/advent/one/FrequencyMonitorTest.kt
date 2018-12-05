@@ -5,35 +5,35 @@ import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.Test
 import java.util.stream.Stream
 
-class FrequencyTrackerTest {
+class FrequencyMonitorTest {
 
     @Nested
     inner class FinalFrequency {
 
         @Test
         fun `test empty stream is 0`() {
-            val frequencyTracker = FrequencyTracker(Stream.empty())
+            val frequencyTracker = FrequencyMonitor(Stream.empty())
             assertThat(frequencyTracker.getFinalFrequency())
                 .isEqualTo(0)
         }
 
         @Test
         fun `test single "+1" stream is 1`() {
-            val frequencyTracker = FrequencyTracker(Stream.of("+1"))
+            val frequencyTracker = FrequencyMonitor(Stream.of("+1"))
             assertThat(frequencyTracker.getFinalFrequency())
                 .isEqualTo(1)
         }
 
         @Test
         fun `test single "-1" stream is -1`() {
-            val frequencyTracker = FrequencyTracker(Stream.of("-1"))
+            val frequencyTracker = FrequencyMonitor(Stream.of("-1"))
             assertThat(frequencyTracker.getFinalFrequency())
                 .isEqualTo(-1)
         }
 
         @Test
         fun `test sequence is sum of sequence`() {
-            val frequencyTracker = FrequencyTracker(Stream.of("-1", "+2", "-3", "+4"))
+            val frequencyTracker = FrequencyMonitor(Stream.of("-1", "+2", "-3", "+4"))
             assertThat(frequencyTracker.getFinalFrequency())
                 .isEqualTo(2)
         }
@@ -44,7 +44,7 @@ class FrequencyTrackerTest {
 
         @Test
         fun `test stream of {+1, -1} is 0`() {
-            val frequencyTracker = FrequencyTracker(Stream.of("+1", "-1"))
+            val frequencyTracker = FrequencyMonitor(Stream.of("+1", "-1"))
             assertThat(frequencyTracker.getFirstRepeatedFrequency())
                 .isEqualTo(0)
         }
