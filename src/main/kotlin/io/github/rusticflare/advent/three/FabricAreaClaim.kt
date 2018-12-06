@@ -6,7 +6,7 @@ import java.util.stream.Stream
 
 class FabricAreaClaim {
 
-    private val id: Int
+    val id: Int
     private val fromLeft: Int
     private val fromTop: Int
     private val width: Int

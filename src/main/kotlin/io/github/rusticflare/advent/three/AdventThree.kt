@@ -20,7 +20,15 @@ class AdventThree {
     }
 
     fun second() {
-        println("Second: ")
+        val coordinateToUsage = fabricAreaClaims()
+            .flatMap { it.coordinates() }
+            .collect(groupingBy({ coordinate -> coordinate }, counting()))
+        val singleClaimId = fabricAreaClaims()
+            .filter { it.coordinates().allMatch { coordinate -> coordinateToUsage[coordinate] == 1L } }
+            .findFirst()
+            .map { it.id }
+            .orElseThrow()
+        println("Second: $singleClaimId")
     }
 
     private fun fabricAreaClaims(): Stream<FabricAreaClaim> {
