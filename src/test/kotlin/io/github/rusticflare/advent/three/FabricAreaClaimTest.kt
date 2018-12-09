@@ -1,14 +1,9 @@
 package io.github.rusticflare.advent.three
 
-import io.github.rusticflare.advent.two.BoxId
-import io.github.rusticflare.advent.two.BoxIdChecksummer
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
-import org.junit.jupiter.api.Assertions.*
 import org.junit.jupiter.api.Test
-import java.util.stream.Stream
 
-internal class FabricAreaClaimTest {
+class FabricAreaClaimTest {
 
     @Test
     fun `test creating FabricAreaClaim`() {

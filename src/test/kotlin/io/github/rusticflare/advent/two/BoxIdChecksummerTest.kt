@@ -1,8 +1,5 @@
 package io.github.rusticflare.advent.two
 
-import io.github.rusticflare.advent.one.FrequencyMonitor
-import io.github.rusticflare.advent.one.ListBackedFrequencyChanges
-import org.assertj.core.api.Assertions
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test
 import java.util.stream.Stream
