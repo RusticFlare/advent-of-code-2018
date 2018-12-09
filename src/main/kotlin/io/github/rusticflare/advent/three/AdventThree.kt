@@ -2,7 +2,6 @@ package io.github.rusticflare.advent.three
 
 import java.nio.file.Files
 import java.nio.file.Paths
-import java.util.*
 import java.util.stream.Collectors.counting
 import java.util.stream.Collectors.groupingBy
 import java.util.stream.Stream
